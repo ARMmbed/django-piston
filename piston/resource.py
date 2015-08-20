@@ -239,10 +239,15 @@ class Resource(object):
 
     @staticmethod
     def _use_emitter(result):
-        """True iff result is a HttpResponse and contains non-string content."""
-        if not isinstance(result, HttpResponse):
+        """
+        True if result is a HttpResponse, contains non-string content and
+        HttpResponse._container should be used.
+        """
+        if django.VERSION >= (1, 7):
             return False
-        elif django.VERSION >= (1, 4):
+        elif not isinstance(result, HttpResponse):
+            return False
+        elif django.VERSION >= (1, 4) and django.VERSION <= (1, 6):
             return result._base_content_is_iter
         else:
             return not result._is_string
