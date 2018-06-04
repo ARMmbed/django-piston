@@ -186,7 +186,7 @@ class Resource(object):
 
         try:
             result = meth(request, *args, **kwargs)
-        except Exception, e:
+        except Exception as e:
             result = self.error_handler(e, request, meth, em_format)
 
         try:
@@ -234,7 +234,7 @@ class Resource(object):
             resp.streaming = self.stream
 
             return resp
-        except HttpStatusCode, e:
+        except HttpStatusCode as e:
             return e.response
 
     @staticmethod

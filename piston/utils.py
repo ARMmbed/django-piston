@@ -358,7 +358,7 @@ def send_consumer_mail(consumer):
         mail_admins(_(subject), body, fail_silently=True)
 
     if settings.DEBUG and consumer.user:
-        print "Mail being sent, to=%s" % consumer.user.email
-        print "Subject: %s" % _(subject)
-        print body
+        print("Mail being sent, to=%s" % consumer.user.email)
+        print("Subject: %s" % _(subject))
+        print(body)
 

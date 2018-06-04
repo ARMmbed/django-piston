@@ -111,8 +111,7 @@ class Emitter(object):
             # relationships
 
             if thing in self.stack:
-                raise RuntimeError, (u'Circular reference detected while emitting '
-                                     'response')
+                raise RuntimeError(u'Circular reference detected while emitting response')
 
             self.stack.append(thing)
 
@@ -287,7 +286,7 @@ class Emitter(object):
 
                     try:
                         ret['resource_uri'] = reverser( lambda: (url_id, fields) )()
-                    except NoReverseMatch, e:
+                    except NoReverseMatch:
                         pass
 
             if hasattr(data, 'get_api_url') and 'resource_uri' not in ret:
