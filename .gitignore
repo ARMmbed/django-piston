@@ -13,3 +13,4 @@ develop-eggs
 .svn
 *.swp
 docs/_build
+.tox
