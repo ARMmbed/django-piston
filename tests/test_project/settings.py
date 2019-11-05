@@ -2,7 +2,7 @@ import os
 DEBUG = True
 DATABASES = {
     'default':
-        {
+    {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': '/tmp/piston.db'
     }
@@ -10,9 +10,9 @@ DATABASES = {
 DATABASE_ENGINE = 'sqlite3'
 DATABASE_NAME = '/tmp/piston.db'
 INSTALLED_APPS = (
-    'django.contrib.auth', 
-    'django.contrib.contenttypes', 
-    'django.contrib.sessions', 
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
     'django.contrib.sites',
     'django.contrib.admin',
     'piston',
